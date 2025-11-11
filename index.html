@@ -1,219 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GoData - Everything Data</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoData - Everything Data</title>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="bg-gray-50">
-
-  <!-- PRE-LOADER -->
-  <div class="loader-wrapper" id="loaderWrapper">
-    <div class="text-center">
-      <div class="spinner"></div>
-      <p>Loading GoData…</p>
-    </div>
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="header-top py-2 text-center text-white text-sm">
-      <span class="inline-flex items-center">
-        <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
-        Whatsapp 027 785 8266 for assistance
-      </span>
-    </div>
-    <nav class="bg-white shadow-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <div class="flex items-center">
-          <button id="logo-button" class="flex-shrink-0 focus:outline-none" onclick="navigate('home')">
-            <img src="Images/Official GD logo.png" alt="GoData Logo" width="130" height="40" class="logo-img rounded">
-          </button>
-        </div>
-        <div class="hidden md:flex space-x-6">
-          <a href="#" class="nav-link text-gray-700 font-medium" onclick="navigate('home')">Home</a>
-          <a href="#" class="nav-link text-gray-700 font-medium" onclick="navigate('services')">Services</a>
-          <a href="#" class="nav-link text-gray-700 font-medium" onclick="navigate('support')">Support</a>
-        </div>
-        <div class="md:hidden">
-          <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-          </button>
-        </div>
-      </div>
-      <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-        <a href="#" class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50" onclick="navigate('home')">Home</a>
-        <a href="#" class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50" onclick="navigate('services')">Services</a>
-        <a href="#" class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50" onclick="navigate('support')">Support</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- HERO (Homepage) -->
-  <section class="hero" id="homeSection">
-    <h1>Affordable Non-Expiry Data Bundles!</h1>
-    <div class="networks-title">Available Networks</div>
-    <div class="networks">
-      <div class="network-card" onclick="goToNetwork('MTN')">
-        <div class="network-logo-wrapper">
-          <img src="Images/mtn (1).jpg" alt="MTN">
-        </div>
-        <p>Data Bundle</p>
-        <h3>MTN</h3>
-        <button class="buy-btn">Buy</button>
-      </div>
-      <div class="network-card" onclick="goToNetwork('AirtelTigo')">
-        <div class="network-logo-wrapper">
-          <img src="Images/at (1).jpg" alt="AirtelTigo">
-        </div>
-        <p>Data Bundle</p>
-        <h3>AirtelTigo</h3>
-        <button class="buy-btn">Buy</button>
-      </div>
-      <div class="network-card" onclick="goToNetwork('Telecel')">
-        <div class="network-logo-wrapper">
-          <img src="Images/telecel (1).jpg" alt="Telecel">
-        </div>
-        <p>Data Bundle</p>
-        <h3>Telecel</h3>
-        <button class="buy-btn">Buy</button>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-gray-50">
+    <!-- PRE-LOADER -->
+    <div class="loader-wrapper" id="loaderWrapper">
+      <div class="text-center">
+        <div class="spinner"></div>
+        <p>Loading GoData…</p>
       </div>
     </div>
-  </section>
 
-  <!-- BUNDLES SECTION -->
-  <section class="bundles-section" id="bundlesSection">
-    <h2 id="networkTitle">MTN Data Bundles</h2>
-    <div class="bundles-grid" id="bundlesGrid"></div>
-  </section>
-
-  <!-- SERVICES PAGE -->
-  <section id="servicesSection" class="max-w-4xl mx-auto px-4 py-12 hidden">
-    <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Services</h1>
-    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-      <div class="mb-6">
-        <i data-lucide="wifi" class="w-16 h-16 text-orange-500 mx-auto"></i>
+    <!-- HEADER -->
+    <header>
+      <div class="header-top py-2 text-center text-white text-sm">
+        <span class="inline-flex items-center">
+          <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+          Whatsapp 027 785 8266 for assistance
+        </span>
       </div>
-      <h2 class="text-2xl font-semibold text-orange-600 mb-4">Data Bundle Services</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        For now we only offer <strong>Data Bundle Services</strong>.<br>
-        More Services coming soon!
-      </p>
-    </div>
-    <div class="text-center mt-10">
-      <button onclick="navigate('home')" class="bg-gray-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition">
-        Back to Home
-      </button>
-    </div>
-  </section>
+      <nav class="bg-white shadow-md">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
+        >
+          <div class="flex items-center">
+            <button
+              id="logo-button"
+              class="flex-shrink-0 focus:outline-none"
+              onclick="navigate('home')"
+            >
+              <img
+                src="Images/Official GD logo.png"
+                alt="GoData Logo"
+                width="130"
+                height="40"
+                class="logo-img rounded"
+              />
+            </button>
+          </div>
+          <div class="hidden md:flex space-x-6">
+            <a
+              href="#"
+              class="nav-link text-gray-700 font-medium"
+              onclick="navigate('home')"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="nav-link text-gray-700 font-medium"
+              onclick="navigate('services')"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="nav-link text-gray-700 font-medium"
+              onclick="navigate('support')"
+              >Support</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-btn"
+              class="text-gray-700 focus:outline-none"
+            >
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+          <a
+            href="#"
+            class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50"
+            onclick="navigate('home')"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50"
+            onclick="navigate('services')"
+            >Services</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50"
+            onclick="navigate('support')"
+            >Support</a
+          >
+        </div>
+      </nav>
+    </header>
 
-  <!-- SUPPORT PAGE -->
-  <section id="supportSection" class="max-w-4xl mx-auto px-4 py-12 hidden">
-    <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Support Center</h1>
-    <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <!-- HERO (Homepage) -->
+    <section class="hero" id="homeSection">
+      <h1>Affordable Non-Expiry Data Bundles!</h1>
+      <div class="networks-title">Available Networks</div>
+      <div class="networks">
+        <div class="network-card" onclick="goToNetwork('MTN')">
+          <div class="network-logo-wrapper">
+            <img src="Images/mtn (1).jpg" alt="MTN" />
+          </div>
+          <p>Data Bundle</p>
+          <h3>MTN</h3>
+          <button class="buy-btn">Buy</button>
+        </div>
+        <div class="network-card" onclick="goToNetwork('AirtelTigo')">
+          <div class="network-logo-wrapper">
+            <img src="Images/at (1).jpg" alt="AirtelTigo" />
+          </div>
+          <p>Data Bundle</p>
+          <h3>AirtelTigo</h3>
+          <button class="buy-btn">Buy</button>
+        </div>
+        <div class="network-card" onclick="goToNetwork('Telecel')">
+          <div class="network-logo-wrapper">
+            <img src="Images/telecel (1).jpg" alt="Telecel" />
+          </div>
+          <p>Data Bundle</p>
+          <h3>Telecel</h3>
+          <button class="buy-btn">Buy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUNDLES SECTION -->
+    <section class="bundles-section" id="bundlesSection">
+      <h2 id="networkTitle">MTN Data Bundles</h2>
+      <div class="bundles-grid" id="bundlesGrid"></div>
+    </section>
+
+    <!-- SERVICES PAGE -->
+    <section id="servicesSection" class="max-w-4xl mx-auto px-4 py-12 hidden">
+      <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">
+        Our Services
+      </h1>
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+        <div class="mb-6">
+          <i data-lucide="wifi" class="w-16 h-16 text-orange-500 mx-auto"></i>
+        </div>
+        <h2 class="text-2xl font-semibold text-orange-600 mb-4">
+          Data Bundle Services
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          For now we only offer <strong>Data Bundle Services</strong>.<br />
+          More Services coming soon!
+        </p>
+      </div>
+      <div class="text-center mt-10">
+        <button
+          onclick="navigate('home')"
+          class="bg-gray-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition"
+        >
+          Back to Home
+        </button>
+      </div>
+    </section>
+
+    <!-- SUPPORT PAGE -->
+    <section id="supportSection" class="max-w-4xl mx-auto px-4 py-12 hidden">
+      <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">
+        Support Center
+      </h1>
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-xl shadow-lg">
+          <h2 class="text-xl font-semibold mb-4 text-orange-600">
+            Send us a Message
+          </h2>
+          <form id="supportForm" class="space-y-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              required
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-orange-500"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              required
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-orange-500"
+            />
+            <textarea
+              placeholder="Your Message"
+              rows="5"
+              required
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-orange-500"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full bg-orange-500 text-white py-3 rounded-lg font-medium hover:bg-orange-600 transition"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg space-y-6">
+          <h2 class="text-xl font-semibold mb-4 text-orange-600">
+            Get in Touch
+          </h2>
+          <div class="flex items-center space-x-3">
+            <i data-lucide="phone" class="w-6 h-6 text-orange-500"></i>
+            <div>
+              <p class="font-medium">WhatsApp</p>
+              <a
+                href="https://wa.me/233277858266"
+                target="_blank"
+                class="text-orange-600 hover:underline"
+                >027 785 8266</a
+              >
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i data-lucide="mail" class="w-6 h-6 text-orange-500"></i>
+            <div>
+              <p class="font-medium">Email</p>
+              <a
+                href="mailto:support@godata.com"
+                class="text-orange-600 hover:underline"
+                >support@godata.com</a
+              >
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i data-lucide="clock" class="w-6 h-6 text-orange-500"></i>
+            <div>
+              <p class="font-medium">Support Hours</p>
+              <p class="text-sm text-gray-600">
+                Mon–Sat: 8AM–10PM<br />Sunday: 9AM–6PM
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://wa.me/233277858266"
+            target="_blank"
+            class="inline-flex items-center justify-center w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600 transition mt-4"
+          >
+            <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
       <div class="bg-white p-6 rounded-xl shadow-lg">
-        <h2 class="text-xl font-semibold mb-4 text-orange-600">Send us a Message</h2>
-        <form id="supportForm" class="space-y-4">
-          <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-orange-500">
-          <input type="email" placeholder="Your Email" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-orange-500">
-          <textarea placeholder="Your Message" rows="5" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-orange-500"></textarea>
-          <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-lg font-medium hover:bg-orange-600 transition">
-            Send Message
+        <h2 class="text-xl font-semibold mb-6 text-orange-600 text-center">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details class="border-b pb-4">
+            <summary class="font-medium cursor-pointer hover:text-orange-600">
+              Do bundles expire?
+            </summary>
+            <p class="mt-2 text-gray-600">
+              No! All GoData bundles are <strong>non-expiry</strong>.
+            </p>
+          </details>
+          <details class="border-b pb-4">
+            <summary class="font-medium cursor-pointer hover:text-orange-600">
+              How long does delivery take?
+            </summary>
+            <p class="mt-2 text-gray-600">
+              Within <strong>30 MINUTES</strong> after payment.
+            </p>
+          </details>
+          <details class="border-b pb-4">
+            <summary class="font-medium cursor-pointer hover:text-orange-600">
+              Can I buy for someone else?
+            </summary>
+            <p class="mt-2 text-gray-600">
+              Yes! Enter the recipient's number at checkout.
+            </p>
+          </details>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <button
+          onclick="navigate('home')"
+          class="bg-gray-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition"
+        >
+          Back to Home
+        </button>
+      </div>
+    </section>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal" id="checkoutModal">
+      <div class="modal-content">
+        <span class="close">×</span>
+        <h2>Checkout</h2>
+        <form id="checkoutForm">
+          <label>Enter Recipient's Number</label>
+          <input
+            type="tel"
+            id="recipientNumber"
+            placeholder="e.g. 0241234567"
+            required
+          />
+          <label>Enter MoMo Wallet Number</label>
+          <input
+            type="tel"
+            id="momoNumber"
+            placeholder="e.g. 0241234567"
+            required
+          />
+          <label>Network</label>
+          <div class="network-selected" id="modalNetwork">MTN</div>
+          <div class="summary">
+            <div class="row">
+              <span>Volume (GB)</span><span id="modalVolume">20</span>
+            </div>
+            <div class="row">
+              <span>Price (GHS)</span><span id="modalPrice">130</span>
+            </div>
+            <div class="row">
+              <span>Fees (GHS)</span><span id="modalFees">3.29</span>
+            </div>
+            <hr />
+            <div class="row total">
+              <span>Make Payment</span><span id="modalTotal">GHS 133.29</span>
+            </div>
+          </div>
+          <button type="submit" class="pay-btn">
+            Make Payment (GHS <span id="payAmount">133.29</span>)
           </button>
         </form>
       </div>
-      <div class="bg-white p-6 rounded-xl shadow-lg space-y-6">
-        <h2 class="text-xl font-semibold mb-4 text-orange-600">Get in Touch</h2>
-        <div class="flex items-center space-x-3">
-          <i data-lucide="phone" class="w-6 h-6 text-orange-500"></i>
-          <div>
-            <p class="font-medium">WhatsApp</p>
-            <a href="https://wa.me/233277858266" target="_blank" class="text-orange-600 hover:underline">027 785 8266</a>
-          </div>
-        </div>
-        <div class="flex items-center space-x-3">
-          <i data-lucide="mail" class="w-6 h-6 text-orange-500"></i>
-          <div>
-            <p class="font-medium">Email</p>
-            <a href="mailto:support@godata.com" class="text-orange-600 hover:underline">support@godata.com</a>
-          </div>
-        </div>
-        <div class="flex items-center space-x-3">
-          <i data-lucide="clock" class="w-6 h-6 text-orange-500"></i>
-          <div>
-            <p class="font-medium">Support Hours</p>
-            <p class="text-sm text-gray-600">Mon–Sat: 8AM–10PM<br>Sunday: 9AM–6PM</p>
-          </div>
-        </div>
-        <a href="https://wa.me/233277858266" target="_blank" class="inline-flex items-center justify-center w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600 transition mt-4">
-          <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
-          Chat on WhatsApp
-        </a>
-      </div>
     </div>
-    <div class="bg-white p-6 rounded-xl shadow-lg">
-      <h2 class="text-xl font-semibold mb-6 text-orange-600 text-center">Frequently Asked Questions</h2>
-      <div class="space-y-4">
-        <details class="border-b pb-4">
-          <summary class="font-medium cursor-pointer hover:text-orange-600">Do bundles expire?</summary>
-          <p class="mt-2 text-gray-600">No! All GoData bundles are <strong>non-expiry</strong>.</p>
-        </details>
-        <details class="border-b pb-4">
-          <summary class="font-medium cursor-pointer hover:text-orange-600">How long does delivery take?</summary>
-          <p class="mt-2 text-gray-600">Within <strong>30 MINUTES</strong> after payment.</p>
-        </details>
-        <details class="border-b pb-4">
-          <summary class="font-medium cursor-pointer hover:text-orange-600">Can I buy for someone else?</summary>
-          <p class="mt-2 text-gray-600">Yes! Enter the recipient's number at checkout.</p>
-        </details>
-      </div>
-    </div>
-    <div class="text-center mt-10">
-      <button onclick="navigate('home')" class="bg-gray-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition">
-        Back to Home
-      </button>
-    </div>
-  </section>
 
-  <!-- CHECKOUT MODAL -->
-  <div class="modal" id="checkoutModal">
-    <div class="modal-content">
-      <span class="close">×</span>
-      <h2>Checkout</h2>
-      <form id="checkoutForm">
-        <label>Enter Recipient's Number</label>
-        <input type="tel" id="recipientNumber" placeholder="e.g. 0241234567" required />
-        <label>Enter MoMo Wallet Number</label>
-        <input type="tel" id="momoNumber" placeholder="e.g. 0241234567" required />
-        <label>Network</label>
-        <div class="network-selected" id="modalNetwork">MTN</div>
-        <div class="summary">
-          <div class="row"><span>Volume (GB)</span><span id="modalVolume">20</span></div>
-          <div class="row"><span>Price (GHS)</span><span id="modalPrice">130</span></div>
-          <div class="row"><span>Fees (GHS)</span><span id="modalFees">3.29</span></div>
-          <hr>
-          <div class="row total"><span>Make Payment</span><span id="modalTotal">GHS 133.29</span></div>
-        </div>
-        <button type="submit" class="pay-btn">Make Payment (GHS <span id="payAmount">133.29</span>)</button>
-      </form>
-    </div>
-  </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Copyright 2025 | GoData</p>
+      <p>Powered By GoData</p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>Copyright 2025 | GoData</p>
-    <p>Powered By GoData</p>
-  </footer>
-
-  <!-- External JS -->
-  <script src="js/script.js"></script>
-</body>
+    <!-- External JS -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
