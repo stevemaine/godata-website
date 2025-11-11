@@ -1,0 +1,89 @@
+/* css/style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === CUSTOM STYLES === */
+.nav-link {
+  @apply hover:text-orange-600 transition-colors duration-200;
+}
+.header-top {
+  background-color: #fb923c;
+}
+.logo-img {
+  transition: transform 0.2s ease;
+}
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* NETWORK LOGO ALIGNMENT */
+.network-logo-wrapper {
+  width: 80px; height: 80px; margin: 0 auto 0.75rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.network-logo-wrapper img {
+  max-width: 100%; max-height: 100%; object-fit: contain;
+}
+.network-card p, .network-card h3 { margin:0; line-height:1.2; }
+
+/* PRE-LOADER */
+.loader-wrapper{position:fixed;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .4s ease;}
+.loader-wrapper.hidden{opacity:0;pointer-events:none;}
+.spinner{width:50px;height:50px;border:5px solid #f3f3f3;border-top:5px solid #fb923c;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 1rem;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.hero{text-align:center;padding:3rem 1rem;}
+.hero h1{font-size:2.5rem;margin-bottom:2rem;color:#222;}
+.networks-title{font-size:1.3rem;margin:2rem 0 1.5rem;color:#555;position:relative;}
+.networks-title::after{content:'';width:60px;height:3px;background:#fb923c;position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);}
+.networks{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2rem;}
+.network-card{background:#fff;border-radius:12px;padding:1.5rem;width:180px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.1);
+  transition:transform .3s;cursor:pointer;}
+.network-card:hover{transform:translateY(-8px) scale(1.02);}
+.buy-btn{background:#fb923c;color:#fff;border:none;padding:.6rem 1.2rem;border-radius:25px;cursor:pointer;font-weight:bold;margin-top:.5rem;}
+.buy-btn:hover{background:#f97316;}
+
+.bundles-section{max-width:1000px;margin:3rem auto;padding:0 1rem;display:none;}
+.bundles-section h2{text-align:center;margin-bottom:2rem;color:#222;}
+.bundles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem;}
+.bundle-card{background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);
+  display:flex;justify-content:space-between;align-items:center;transition:all .3s;}
+.bundle-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.15);}
+.bundle-info h3{font-size:1.1rem;color:#fb923c;}
+.bundle-info p{color:#666;font-size:.9rem;}
+
+@keyframes pulse{0%,100%{background-color:#e0e0e0;}50%{background-color:#f0f0f0;}}
+.skeleton{background:#e0e0e0;border-radius:8px;animation:pulse 1.5s ease-in-out infinite;}
+.skeleton-text{height:1.2rem;}
+.skeleton-btn{height:2.5rem;width:70px;}
+.fade-in{animation:fadeIn .4s ease forwards;opacity:0;transform:translateY(10px);}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0);}}
+
+.modal{display:none;opacity:0;transition:opacity .25s ease;position:fixed;z-index:1000;inset:0;
+  background:rgba(0,0,0,.5);align-items:center;justify-content:center;}
+.modal.show{display:flex;opacity:1;}
+.modal-content{background:#fff;padding:2rem;border-radius:12px;width:90%;max-width:420px;position:relative;}
+.close{position:absolute;top:15px;right:20px;font-size:1.5rem;cursor:pointer;color:#aaa;}
+.close:hover{color:#000;}
+.modal-content h2{margin-bottom:1.5rem;color:#222;text-align:center;}
+.modal-content label{display:block;margin:1rem 0 .5rem;font-weight:500;color:#444;}
+.modal-content input{width:100%;padding:.8rem;border:1px solid #ddd;border-radius:8px;font-size:1rem;}
+.network-selected{background:#f0f0f0;padding:.8rem;border-radius:8px;text-align:center;font-weight:bold;color:#fb923c;margin-bottom:1rem;}
+.summary{margin:1.5rem 0;font-size:.95rem;}
+.summary .row{display:flex;justify-content:space-between;padding:.4rem 0;}
+.summary hr{border:none;border-top:1px dashed #ddd;margin:.8rem 0;}
+.summary .total{font-weight:bold;font-size:1.1rem;color:#222;}
+.pay-btn{width:100%;background:#fb923c;color:#fff;border:none;padding:1rem;font-size:1.1rem;
+  font-weight:bold;border-radius:8px;cursor:pointer;margin-top:1rem;}
+.pay-btn:hover{background:#f97316;}
+
+.footer{background:#1a2a44;color:#fff;text-align:center;padding:1.5rem;margin-top:4rem;font-size:.9rem;}
+.footer p{margin:.3rem 0;}
+.footer p:last-child{font-weight:bold;}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem;}
+  .networks{gap:1rem;}
+  .network-card{width:140px;padding:1rem;}
+}
