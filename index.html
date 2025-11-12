@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoData - Everything Data</title>
+    <link rel="icon" type="image/png" href="Images/Site icon.png" />
+    <link rel="apple-touch-icon" href="Images/Site icon.png" />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,38 +32,83 @@
           Whatsapp 027 785 8266 for assistance
         </span>
       </div>
-          <!-- MAIN NAVIGATION -->
-    <nav class="bg-white shadow-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <!-- LEFT: Mobile Menu + Logo (Mobile) | Logo Only (Desktop) -->
-        <div class="flex items-center space-x-4">
-          <!-- Mobile Menu Button (Only on Mobile) -->
-          <div class="md:hidden">
-            <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
-              <i data-lucide="menu" class="w-6 h-6"></i>
+      <!-- MAIN NAVIGATION -->
+      <nav class="bg-white shadow-md">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
+        >
+          <!-- LEFT: Mobile Menu + Logo (Mobile) | Logo Only (Desktop) -->
+          <div class="flex items-center space-x-4">
+            <!-- Mobile Menu Button (Only on Mobile) -->
+            <div class="md:hidden">
+              <button
+                id="mobile-menu-btn"
+                class="text-gray-700 focus:outline-none"
+              >
+                <i data-lucide="menu" class="w-6 h-6"></i>
+              </button>
+            </div>
+            <!-- Logo -->
+            <button
+              id="logo-button"
+              class="flex-shrink-0 focus:outline-none"
+              onclick="navigate('home')"
+            >
+              <img
+                src="Images/Official GD logo.png"
+                alt="GoData Logo"
+                width="130"
+                height="40"
+                class="logo-img rounded"
+              />
             </button>
           </div>
-          <!-- Logo -->
-          <button id="logo-button" class="flex-shrink-0 focus:outline-none" onclick="navigate('home')">
-            <img src="Images/Official GD logo.png" alt="GoData Logo" width="130" height="40" class="logo-img rounded">
-          </button>
+
+          <!-- RIGHT: Nav Links (Desktop Only) -->
+          <div class="hidden md:flex space-x-6">
+            <a
+              href="#"
+              class="nav-link text-gray-700 font-medium"
+              onclick="navigate('home')"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="nav-link text-gray-700 font-medium"
+              onclick="navigate('services')"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="nav-link text-gray-700 font-medium"
+              onclick="navigate('support')"
+              >Support</a
+            >
+          </div>
         </div>
 
-        <!-- RIGHT: Nav Links (Desktop Only) -->
-        <div class="hidden md:flex space-x-6">
-          <a href="#" class="nav-link text-gray-700 font-medium" onclick="navigate('home')">Home</a>
-          <a href="#" class="nav-link text-gray-700 font-medium" onclick="navigate('services')">Services</a>
-          <a href="#" class="nav-link text-gray-700 font-medium" onclick="navigate('support')">Support</a>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+          <a
+            href="#"
+            class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50"
+            onclick="navigate('home')"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50"
+            onclick="navigate('services')"
+            >Services</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50"
+            onclick="navigate('support')"
+            >Support</a
+          >
         </div>
-      </div>
-
-      <!-- Mobile Menu Dropdown -->
-      <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-        <a href="#" class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50" onclick="navigate('home')">Home</a>
-        <a href="#" class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50" onclick="navigate('services')">Services</a>
-        <a href="#" class="block px-4 py-3 text-gray-700 font-medium hover:bg-orange-50" onclick="navigate('support')">Support</a>
-      </div>
-    </nav>
+      </nav>
     </header>
 
     <!-- HERO (Homepage) -->
