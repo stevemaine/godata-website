@@ -34,13 +34,13 @@ document.getElementById('supportForm').onsubmit = function(e) {
 
 // === BUNDLES DATA ===
 const bundles = {
-  MTN: [{gb:1,price:7},{gb:2,price:13},{gb:3,price:18},{gb:4,price:23},{gb:5,price:28},{gb:6,price:34},{gb:7,price:37.5},
-        {gb:8,price:42},{gb:10,price:49},{gb:15,price:72},{gb:20,price:92},{gb:25,price:112},
-        {gb:30,price:136},{gb:40,price:176},{gb:50,price:208}],
-  AirtelTigo: [{gb:1,price:7},{gb:2,price:13},{gb:3,price:18},{gb:4,price:23},{gb:5,price:28},{gb:6,price:34},{gb:7,price:37.5},
-        {gb:8,price:42},{gb:10,price:49},{gb:15,price:72},{gb:20,price:92},{gb:25,price:112},
-        {gb:30,price:136},{gb:40,price:176},{gb:50,price:208}],
-  Telecel: [{gb:5,price:10},{gb:3,price:28},{gb:10,price:70},{gb:20,price:128}]
+  MTN: [{gb:1,price:8},{gb:2,price:14},{gb:3,price:20.2},{gb:4,price:25},{gb:5,price:30.8},{gb:6,price:35},{gb:7,price:37.5},
+        {gb:8,price:44},{gb:10,price:55},{gb:15,price:72},{gb:20,price:95.5},{gb:25,price:112},
+        {gb:30,price:140},{gb:40,price:179},{gb:50,price:225}],
+  AirtelTigo: [{gb:1,price:8},{gb:2,price:14},{gb:3,price:19.2},{gb:4,price:24.4},{gb:5,price:28.2},{gb:6,price:31.2},{gb:7,price:35.6},
+        {gb:10,price:44},{gb:12,price:48},{gb:15,price:63},{gb:20,price:86},{gb:25,price:97},
+        {gb:30,price:125.5}],
+  Telecel: [{gb:10,price:53.5},{gb:15,price:74},{gb:20,price:92},{gb:30,price:130},{gb:40,price:172},{gb:50,price:215}],
 };
 const feeRate = 0.025;
 let currentNetwork = '';
