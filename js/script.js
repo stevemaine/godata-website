@@ -40,7 +40,7 @@ const bundles = {
   AirtelTigo: [{gb:1,price:8},{gb:2,price:14},{gb:3,price:19.2},{gb:4,price:24.4},{gb:5,price:28.2},{gb:6,price:31.2},{gb:7,price:35.6},
         {gb:10,price:44},{gb:12,price:48},{gb:15,price:63},{gb:20,price:86},{gb:25,price:97},
         {gb:30,price:125.5}],
-  Telecel: [{gb:10,price:53.5},{gb:15,price:74},{gb:20,price:92},{gb:30,price:130},{gb:40,price:172},{gb:50,price:215}],
+  Telecel: [{gb:5,price:28},{gb:10,price:53.5},{gb:15,price:74},{gb:20,price:92},{gb:30,price:130},{gb:40,price:172},{gb:50,price:215}],
 };
 const feeRate = 0.025;
 let currentNetwork = '';
