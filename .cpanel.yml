@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/godatahu/public_html/
-    - /bin/cp -r . $DEPLOYPATH/
+    - /bin/cp -R * $DEPLOYPATH
     - /bin/rm -rf $DEPLOYPATH/.git
